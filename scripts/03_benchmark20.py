@@ -67,7 +67,7 @@ def make_models(num_idx):
         "LightGBM": LGBMRegressor(n_estimators=800, learning_rate=0.05, num_leaves=63, min_child_samples=40,
                                   subsample=0.8, subsample_freq=1, colsample_bytree=0.8, reg_lambda=1.0, n_jobs=NT,
                                   random_state=SEED, verbose=-1),
-        "CatBoost": CatBoostRegressor(iterations=1000, learning_rate=0.08, depth=8, thread_count=NT, verbose=0,
+        "CatBoost": CatBoostRegressor(allow_writing_files=False, iterations=1000, learning_rate=0.08, depth=8, thread_count=NT, verbose=0,
                                       random_seed=SEED),
     }
 

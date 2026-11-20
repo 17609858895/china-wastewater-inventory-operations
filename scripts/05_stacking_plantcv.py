@@ -39,7 +39,7 @@ def base_models(num_idx):
         "XGBoost": lambda: XGBRegressor(n_estimators=500, learning_rate=0.04, max_depth=6, min_child_weight=10,
                                         subsample=0.8, colsample_bytree=0.7, reg_lambda=3.0, tree_method="hist",
                                         n_jobs=NT, random_state=SEED),
-        "CatBoost": lambda: CatBoostRegressor(iterations=700, learning_rate=0.06, depth=7, l2_leaf_reg=5,
+        "CatBoost": lambda: CatBoostRegressor(allow_writing_files=False, iterations=700, learning_rate=0.06, depth=7, l2_leaf_reg=5,
                                               thread_count=NT, verbose=0, random_seed=SEED),
         "ExtraTrees": lambda: ExtraTreesRegressor(250, min_samples_leaf=8, max_features=0.5, n_jobs=NT, random_state=SEED),
         "RandomForest": lambda: RandomForestRegressor(250, min_samples_leaf=8, max_features=0.4, n_jobs=NT, random_state=SEED),
